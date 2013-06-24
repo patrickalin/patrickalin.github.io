@@ -1,0 +1,77 @@
+name: "Patrick Alin"
+description: "Site of Patrick Alin"
+email: "admin@alin.be"
+
+url: "http://patrickalin.github.io"
+server_port: 80
+
+git: "https://github.com/patrickalin/patrickalin.github.io"
+
+types: [
+	"Architecture",
+	"Guide",
+	"Concept",
+	"Report",
+	"ArchitectureDetails"
+]
+
+eacategories: [
+	"Business",
+	"Application",
+	"Infrastructure",
+	"Data",
+	"Deploying Infrastructure",
+	"Making Software",
+	"Measurement",
+	"Operations"
+]
+
+architecturecategories: [
+	"Business",
+	"Application",
+	"Infrastructure",
+	"Data"
+]
+
+guidecategories: [
+	"Deploying Infrastructure",
+	"Making Software",
+	"Measurement",
+	"Operations",
+	"Data"
+]
+
+subcategories: [
+	"Foundation",
+	"1",
+	"2"
+]
+
+status: [
+	"Draft",
+	"Approved",
+	"Recycled"
+]
+
+draft: "Draft"
+architecture: "Architecture"
+guide: "Guide"
+concept: "Concept"
+recycled: "Recycled"
+report: "Report"
+design: "Design"
+
+paginate: 10
+
+markdown: rdiscount
+permalink: pretty
+pygments: true
+
+markdown: kramdown
+
+kramdown:
+  auto_ids: true,
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..3
+  use_coderay: true

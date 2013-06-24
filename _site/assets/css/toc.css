@@ -1,0 +1,10 @@
+#markdown-toc:before {
+  content: "Table of Contents";
+  font-weight: bold;
+}
+ul#markdown-toc {
+  list-style: none;
+  float: right;
+  @include shadow-box;
+  background-color: white;
+}

@@ -1,0 +1,124 @@
+<!-- includeJavascript.html -->
+<!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="/assets/js/jquery/jquery.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-transition.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-alert.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-modal.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-dropdown.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-scrollspy.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-tab.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-tooltip.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-popover.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-button.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-collapse.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-carousel.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-typeahead.js"></script>
+    <script src="/assets/js/bootstrap/js/bootstrap-affix.js"></script>
+    <script>
+      !function ($) {
+        $(function(){
+          // carousel demo
+          $('#myCarousel').carousel()
+        })
+      }(window.jQuery)
+    </script>
+    <script src="/assets/js/holder/holder.js"></script>
+    <script src="/assets/js/google-code-prettify/prettify.js"></script>
+    <script src="/assets/js/application.js"></script>  
+    
+
+    <script type="text/javascript">
+    /* Load time */
+		var page_load_time;
+		
+		window.onload = function(){
+			console.log("window.onload");					
+			setTimeout(function(){
+				var t = performance.timing;
+				console.log(t.loadEventEnd - t.responseEnd);
+				page_load_time = t.loadEventEnd - t.navigationStart;
+				$('.timeload').html("Load Time "+ page_load_time +" ms");
+			}, 0);
+			
+			/* Only for the tool markdown editor spice*/
+			{% if page.layout == "layoutTools" %}
+				codeAddress();
+			{% endif %}			
+			
+		}		
+	</script>
+
+	<script>
+			(function() {
+				$.getJSON('/glossary.json', function(data) {
+				console.log(data);
+				var items = [];							
+				$.each(data, function(key, val) {		
+					var contentGlossary = "<div id='gloss"+key+"' class='modal hide fade' tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true'>		<div class='modal-header'> 	<button type='button' class='close' data-dismiss='modal' aria-hidden='true'>x</button> 				<h3 id='myModalLabel'>"+key+"</h3> 				</div> 					<div class='modal-body'> 					<p> 					"+val+"<br> <br> <a href='/ea/glossary/'> Glossary </a>					</p>					</div><div class='modal-footer'>					<button class='btn' data-dismiss='modal' aria-hidden='true'>Close</button>					</div>					</div>"
+					
+					items.push(contentGlossary);
+				});
+
+				$('<ul/>', {
+					'class': 'my-new-list',
+					html: items.join('')
+				}).appendTo('body');
+			});
+	})();
+	</script>
+	
+	
+	<script>
+			(function() {
+				$.getJSON('/glossary.json', function(data) {
+				var items = [];							
+				var contentGlossary;
+				$.each(data, function(key, val) {													
+					contentGlossary = "<span class='label label-info'>"+key+" : </span>  "+val+"<br><br>";
+					
+					items.push(contentGlossary);
+				});
+				
+				$('.glossaryList').html(items.join(''));
+			});
+	})();
+	</script>
+	
+	<script>		
+	/* Params get */
+		var prmstr = window.location.search.substr(1);
+		var prmarr = prmstr.split ("&");
+		var params = {};
+		
+		for ( var i = 0; i < prmarr.length; i++) {
+		    var tmparr = prmarr[i].split("=");
+		    params[tmparr[0]] = tmparr[1];
+		}
+	</script>
+	
+	<script type="text/javascript">
+	/* Display localhost in the navbar */
+			
+		$('#'+params.accordion).collapse('show');
+				
+		if (window.location.hostname=="localhost") {
+			$('#warningHostname').html("<font color='red'>Localhost</font>");
+		}
+		
+	</script>
+        
+	<script type="text/javascript" language="javascript" src="/assets/js/jquery/jquery.js"></script>
+	<script type="text/javascript" language="javascript" src="/assets/js/jquery/jquery.dataTables.js"></script>
+	
+	<script type="text/javascript" charset="utf-8">
+	$(document).ready(function() {
+		$('#example').dataTable( {
+			"bProcessing": true,
+			"sAjaxSource": '../bookmark.json'
+		} );
+	} );
+	</script>
+	
+<!-- includeJavascript.html
+========================================================================================================== -->
