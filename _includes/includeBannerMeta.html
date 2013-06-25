@@ -1,0 +1,57 @@
+<!-- includeBannerMeta.html	-->
+<br>
+<div class="noprint">
+{% if page.type != nil%}
+	<a class="btn btn-success" href="/ea/filterMeta/?accordion={{page.type}}"><img src="/assets/icones/{{page.type}}16b.png" alt="{{page.type}}"> {{page.type}}</a>
+{% endif %}
+
+{% if page.category != nil%}
+	<a class="btn btn-info" href="/ea/filterMeta/?accordion={{page.category | remove:' '}}"><img src="/assets/icones/{{page.category}}16b.png" alt="{{page.category}}"> {{page.category}}</a>
+{% endif %}
+
+{% if page.subcategory != nil%}
+	{% if page.subcategory == "Foundation" %}
+		<a class="btn btn-inverse" href="/ea/filterMeta/?accordion={{page.subcategory | remove:' '}}"><img src="/assets/icones/{{page.subcategory}}16b.png" alt="{{page.subcategory}}">
+	{% endif %}
+	{% if page.subcategory == "Blueshift" %}
+		<a class="btn btn-primary" href="/ea/filterMeta/?accordion={{page.subcategory | remove:' '}}"><img src="/assets/icones/{{page.subcategory}}16b.png" alt="{{page.subcategory}}">
+	{% endif %}
+	{% if page.subcategory == "Redshift" %}
+		<a class="btn btn-danger" href="/ea/filterMeta/?accordion={{page.subcategory | remove:' '}}"><img src="/assets/icones/{{page.subcategory}}16b.png" alt="{{page.subcategory}}">
+	{% endif %}
+	{{page.subcategory}}</a>
+{% endif %}
+
+{% if page.status != nil%}
+	<a class="btn btn-warning" href="/ea/filterMeta/?accordion={{page.status}}"><img src="/assets/icones/{{page.status}}16b.png" alt="{{page.status}}"> {{page.status}}</a>
+{% endif %}
+</div>
+
+<div class="print">
+{% if page.type != nil%}
+	<a class="btn btn-success"><img src="/assets/icones/{{page.type}}16.png" alt="{{page.type}}"> {{page.type}}</a>
+{% endif %}
+
+{% if page.category != nil%}
+	<a class="btn btn-info"><img src="/assets/icones/{{page.category}}16.png" alt="{{page.category}}"> {{page.category}}</a>
+{% endif %}
+
+{% if page.subcategory != nil%}
+	{% if page.subcategory == "Foundation" %}
+		<a class="btn btn-inverse"><img src="/assets/icones/{{page.subcategory}}16.png" alt="{{page.subcategory}}">
+	{% endif %}
+	{% if page.subcategory == "Blueshift" %}
+		<a class="btn btn-primary"><img src="/assets/icones/{{page.subcategory}}16.png" alt="{{page.subcategory}}">
+	{% endif %}
+	{% if page.subcategory == "Redshift" %}
+		<a class="btn btn-danger"><img src="/assets/icones/{{page.subcategory}}16.png" alt="{{page.subcategory}}">
+	{% endif %}
+	{{page.subcategory}}</a>
+{% endif %}
+
+{% if page.status != nil%}
+	<a class="btn btn-warning"><img src="/assets/icones/{{page.status}}16.png" alt="{{page.status}}"> {{page.status}}</a>
+{% endif %}
+</div>
+	<!-- End layoutInitiatives.html
+========================================================================================================== -->

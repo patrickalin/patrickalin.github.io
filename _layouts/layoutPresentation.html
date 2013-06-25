@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- layoutPresentation.html -->
+{% include includeHeader.html %}
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+{% include includeNavbar.html %}
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>Patrick Alin</h1>
+    <p class="lead">Presentation</p>
+  </div>
+</header>
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3">
+			<div class="span3 bs-docs-sidebar">
+				{{ page.content | toc_list1level }}
+			</div>
+		</div>
+		<div class="span9">
+			<br>
+			<br>
+			<!-- content {{page.filename}}
+			========================================================================================================== -->	
+			{{ content }}
+			<!-- end content {{page.filename}}
+			========================================================================================================== -->	
+		</div>
+	</div>
+</div>
+
+{% include includeFooter.html %}
+{% include includeJavascript.html %}
+
+  </body>
+</html>
+<!-- end layoutPresentation.html 
+========================================================================================================== -->

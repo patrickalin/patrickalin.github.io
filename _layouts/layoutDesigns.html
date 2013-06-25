@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- layoutInitiatives.html-->
+{% include includeHeader.html %}
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+{% include includeNavbar.html %}
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>Browse designs by topic</h1>
+    <p class="lead">A list of all designs.</p>
+  </div>
+</header>
+
+<div class="container-fluid tooltip-demo">
+
+    <div class="row">
+    	{% include includeSlideBarDesigns.html %}
+     	 	 
+        <div class="span9">
+			<div class="hero-unit">
+				<h1>Enterprise Architecture Designs</h1>				
+			</div>
+			
+		{% for item in site.guidecategories %}
+			{% assign category = {{item}}%}
+			<h1 id="{{category}}">
+				<img src="/assets/icones/{{category}}.png" alt="{{category}}">-<span style="color:green">{{category}} Architectures</span>
+			</h1>
+			{% assign variablei = 0 %}<!-- i=0 -->
+			
+			{% for page in site.pages %}<!-- for pages-->
+				{% if page.type == site.design %}<!-- if type-->
+					{% if page.category == category%}<!-- if category-->				
+						{% if page.status != site.recycled%}<!-- if recycled-->
+							{% capture modulus %}{{ variablei | modulo:3 }}{% endcapture %}<!-- Modulo 3-->
+							{% if modulus == "0" %}<!-- Test Modulo-->
+								<div class="row-fluid"><!-- Start Row-->
+							{% endif %}<!-- Endif-->		
+							<div class="span4 well">													
+							
+							<h5><font size="5">
+							{% if page.status == nil%}
+							<img src="/assets/icones/checkbox-unchecked.png" alt="Unchecked">
+							{% endif %}
+							{% if page.status != nil%}							
+							<a href="#" data-toggle="tooltip" title="{{page.status}}"><img src="/assets/icones/{{page.status}}16.png" alt="{{page.status}}16.png"></a>							
+							{% endif %}
+							{{ page.title}}
+							</font></h5>
+							
+							<p>
+							{{ page.description }}
+							</p>
+							<p>
+							<a class="btn" href="{{page.url}}">View details &raquo;</a>
+							</p>
+							</div>
+							{% if modulus == "2" %}<!-- Test Modulo 2 --> 
+								</div><!-- End Row-->
+							{% endif %}<!-- Endif Modulo-->
+							{% capture variablei %}{{ variablei | plus:1 }}{% endcapture %}<!-- i++ --> 
+						{% endif %}<!-- Endif status -->
+					{% endif %}<!-- Endif category-->
+				{% endif %}<!-- Endif type-->
+			{% endfor %}<!-- Endfor page-->
+			{% if modulus != "2" and variablei != 0%}<!-- Test Modulo 2 -->
+				</div><!-- End Row-->
+			{% endif %}
+		{% endfor %}
+
+		</div> <!-- span9-->
+	</div><!--/row-->
+
+
+
+</div> <!-- /container-->
+{% include includeFooter.html %}
+{% include includeJavascript.html %}
+
+  </body>
+</html>
+<!-- End layoutInitiatives.html
+========================================================================================================== -->

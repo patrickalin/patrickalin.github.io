@@ -7,7 +7,7 @@ module Jekyll
     end
 
     def render(context)
-      "#{@text} #{Time.now} <br> Site EA ;-)"
+      "#{@text} #{Time.now} <br>"
     end
   end
 end

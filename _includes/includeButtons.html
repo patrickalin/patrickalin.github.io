@@ -1,0 +1,51 @@
+<!-- includeButtons.html -->
+		<div class="nav nav-list bs-docs-sidenav noprint">	
+			{% if page.type == site.report %}
+			<a title="Go to PDF" href="/pdf/{{ page.date | date: "%Y-%m-%d" }}-{{ page.url | split:'/' | last | append:'.pdf'}}" target="_blank"><img src="/assets/icones/file-pdf.png" alt="PDF"></a>
+			{% else %}						
+			<a title="Go to PDF" href="/pdf/{{ page.url | split:'/' | last | append:'.pdf'}}" target="_blank"><img src="/assets/icones/file-pdf.png" alt="PDF"></a>
+			{% endif %}
+			<br>
+			<a href='mailto:@gmail.com?subject=Send link from {{site.description}} - {{page.title}}&body= Hello, 
+			%0D%0A 
+			%0D%0A Short Description : {{page.description | replace:"'"," " }}  
+			%0D%0A 
+			%0D%0A Here, the link from the page "{{page.title}}" : 
+			%0D%0A                  {{ site.url}}{{ page.url}}
+			%0D%0A
+			%0D%0A Here, the link for the PDF :
+			{% if page.type == site.report %}			
+			%0D%0A                  {{ site.url}}/pdf/{{ page.date | date: "%Y-%m-%d" }}-{{ page.url | split:'/' | last | append:'.pdf'}}
+			{% else %}						
+			%0D%0A                  {{ site.url}}/pdf/{{ page.url | split:'/' | last | append:'.pdf'}}
+			{% endif %}			
+			
+			%0D%0A 
+			%0D%0A Best regards,
+			%0D%0A 
+			%0D%0A      admin@alin.be'
+			 target="_blank"> 
+			<img title="Mail this page" src="/assets/icones/mail2.png" alt="Mail">
+			<br>
+			<a title="Print this page" href="javascript:window.print()"><img src="/assets/icones/print.png" alt="Print"></a> 
+			
+			
+			
+			<br>				
+			{% assign categoryReport = page.url | split:'/' %}							
+			{% if page.type == site.report %}			
+			<a title="View and suggest changes to the page source on Git" href="http://{{ site.git}}/enterprise-architect/easite/blob/master/reports/{{categoryReport[2]}}/_posts/{{ page.date | date: "%Y-%m-%d" }}-{{ page.url | split:'/' | last | append:'.md'}}" target="_blank"><img src="/assets/icones/github4.png" alt="Page source"></a>
+			{% else %}						
+			<a title="View and suggest changes to the page source on Git" href="http://{{ site.git}}/enterprise-architect/easite/blob/master{{ page.url | append:'.md' | replace:'/.md','.md' }}" target="_blank"><img src="/assets/icones/github4.png" alt="Page source"></a>
+			{% endif %}
+		    
+			<br>
+			{% if page.type == site.report %}						
+			<a title="View the page history on GitLab" href="http://{{ site.git}}/enterprise-architect/easite/commits/master/reports/{{categoryReport[2]}}/_posts/{{ page.date | date: "%Y-%m-%d" }}-{{ page.url | split:'/' | last | append:'.md'}}" target="_blank"><img src="/assets/icones/history.png" alt="Page history"></a>
+			{% else %}						
+			<a title="View the page history on GitLab" href="http://{{ site.git}}/enterprise-architect/easite/commits/master{{ page.url | append:'.md' | replace:'/.md','.md' }}" target="_blank"><img src="/assets/icones/history.png" alt="Page history"></a>
+			{% endif %}			
+			
+		</div>
+		<!-- End includeButtons.html
+========================================================================================================== -->

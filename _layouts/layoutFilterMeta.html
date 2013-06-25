@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- layoutFilterMeta.html -->
+{% include includeHeader.html %}
+<body data-spy="scroll" data-target=".bs-docs-sidebar">
+{% include includeNavbar.html %}
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>Enterprise Architect Bookmarks</h1>
+    <p class="lead">Filter with Meta</p>
+  </div>
+</header>
+
+<div class="container-fluid">
+
+
+	<div class="row-fluid">
+		<div class="span2">
+		</div>
+		<div class="span8">
+		<br>
+
+		
+<div class="accordion" id="accordion2">		
+		
+			{% for item in site.types %}
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						 <a class="accordion-toggle btn btn-success" data-toggle="collapse" data-parent="#accordion2" href="#{{item}}">
+        					Type :  <img src="/ea/assets/img/icones/{{item}}16b.png" alt="{{item}}"> {{item}}</a>
+     					 </a>
+					</div>
+					<div id="{{item}}" class="accordion-body collapse">
+						<div class="accordion-inner">
+							{% for page in site.pages %}<!-- for pages-->
+								{% if page.type == item%}<!-- if status-->
+									<div class="well">
+										{% include includeBannerMeta.html %} <br>
+										<h4>
+										<b>{{ page.title }} :</b>
+										{{ page.description }}<br>
+										</h4>
+										<a class="btn" href="{{page.url}}">View details &raquo;</a><br>
+									</div>
+									<br>
+								{% endif %}<!-- Endif type-->
+							{% endfor %}<!-- Endfor page-->					
+						</div> <!-- accordion inner-->
+					</div> <!-- accordion body-->
+				</div> <!-- accordion group -->
+			{% endfor %}<!-- Endfor array-->
+
+		
+			{% for item in site.eacategories %}
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						 <a class="accordion-toggle btn btn-info" data-toggle="collapse" data-parent="#accordion2" href="#{{item | remove:' '}}">
+        					Category :  <img src="/ea/assets/img/icones/{{item}}16b.png" alt="{{item}}"> {{item}}</a>
+     					 </a>
+					</div>
+					<div id="{{item | remove:' '}}" class="accordion-body collapse">
+					<div class="accordion-inner">
+				{% for page in site.pages %}<!-- for pages-->
+					{% if page.category == item%}<!-- if status-->
+						<div class="well">
+							{% include includeBannerMeta.html %} <br>
+							<h4>
+							<b>{{ page.title }} :</b>
+							{{ page.description }}<br>
+							</h4>
+							<a class="btn" href="{{page.url}}">View details &raquo;</a><br>
+							</div>
+							<br>
+					{% endif %}<!-- Endif type-->
+				{% endfor %}<!-- Endfor page-->
+					</div> <!-- accordion inner-->
+					</div> <!-- accordion body-->
+					</div> <!-- accordion group -->
+			{% endfor %}<!-- Endfor array-->
+		
+			{% for item in site.subcategories %}
+				<div class="accordion-group">
+					<div class="accordion-heading">
+					{% if item == "Foundation" %}
+						<a class="accordion-toggle btn btn-inverse" data-toggle="collapse" data-parent="#accordion2" href="#{{item}}">Subcategory :  <img src="/ea/assets/img/icones/{{item}}16b.png" alt="{{item}}">
+					{% endif %}
+					{% if item == "Blueshift" %}
+						<a class="accordion-toggle btn btn-primary" data-toggle="collapse" data-parent="#accordion2" href="#{{item}}">Subcategory :  <img src="/ea/assets/img/icones/{{item}}16b.png" alt="{{item}}">
+					{% endif %}
+					{% if item == "Redshift" %}
+						<a class="accordion-toggle btn btn-danger" data-toggle="collapse" data-parent="#accordion2" href="#{{item}}">Subcategory :  <img src="/ea/assets/img/icones/{{item}}16b.png" alt="{{item}}">
+					{% endif %}
+					{{item}}</a>
+					
+					</div>
+					<div id="{{item}}" class="accordion-body collapse">
+					<div class="accordion-inner">
+
+				{% for page in site.pages %}<!-- for pages-->
+					{% if page.subcategory == item%}<!-- if status-->
+						<div class="well">
+							{% include includeBannerMeta.html %} <br>
+							<h4>
+							<b>{{ page.title }} :</b>
+							{{ page.description }}<br>
+							</h4>
+							<a class="btn" href="{{page.url}}">View details &raquo;</a><br>
+							</div>
+							<br>
+					{% endif %}<!-- Endif type-->
+				{% endfor %}<!-- Endfor page-->
+					</div> <!-- accordion inner-->
+					</div> <!-- accordion body-->
+					</div> <!-- accordion group -->
+			{% endfor %}<!-- Endfor array-->
+
+			{% for item in site.status %}
+				<div class="accordion-group">
+					<div class="accordion-heading">
+						 <a class="accordion-toggle btn btn-warning" data-toggle="collapse" data-parent="#accordion2" href="#{{item}}">
+        					Status : <img src="/ea/assets/img/icones/{{item}}16b.png" alt="{{item}}"> {{item}}</a>
+     					 </a>
+					</div>
+					<div id="{{item}}" class="accordion-body collapse">
+					<div class="accordion-inner">
+				{% for page in site.pages %}<!-- for pages-->
+					{% if page.status == item%}<!-- if status-->
+						<div class="well">
+							{% include includeBannerMeta.html %} <br>
+							<h4>
+							<b>{{ page.title }} :</b>
+							{{ page.description }}<br>
+							</h4>
+							<a class="btn" href="{{page.url}}">View details &raquo;</a><br>
+							</div>
+							<br>
+					{% endif %}<!-- Endif type-->
+				{% endfor %}<!-- Endfor page-->
+					</div> <!-- accordion inner-->
+					</div> <!-- accordion body-->
+					</div> <!-- accordion group -->
+			{% endfor %}<!-- Endfor array-->
+			
+		</div> <!-- End Accordion-->
+
+		</div>
+		<div class="span2">
+		</div>
+	</div>
+</div>
+
+{% include includeFooter.html %}
+{% include includeJavascript.html %}
+
+  </body>
+</html>
+<!-- end layoutFilterMeta.html 
+========================================================================================================== -->

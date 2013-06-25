@@ -1,0 +1,27 @@
+<!-- includeBannerType.html -->
+{% assign Initiative = "Initiative"%}
+{% assign Guide = "Guide"%}
+
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+    <h1>
+	{% if page.type != nil%}
+    <img src="/assets/icones/{{page.type}}b.png" alt="{{page.type}}" class="noprint"> 
+	{% endif %}
+	{% if page.category != nil%}
+    <img src="/assets/icones/{{page.category}}b.png" alt="{{page.category}}" class="noprint">
+	 {% endif %}
+    {% if page.subcategory != nil%}
+    <img src="/assets/icones/{{page.subcategory}}b.png" alt="{{item}}" class="noprint">
+    {% endif %}
+    {{ page.title}} </h1>
+    {% if page.type == Initiative%}    
+    	<p class="lead noprint">You can find all initiatives <a href="/ea/initiatives/" class="btn btn-primary btn-large">Here &raquo;</a></p>
+	{% endif %}
+	{% if page.type == Guide%}    
+    	<p class="lead noprint">You can find all guides <a href="/ea/guides/" class="btn btn-primary btn-large">Here &raquo;</a></p>
+	{% endif %}
+  </div>
+</header>
+<!-- end includeBannerType.html 
+========================================================================================================== -->
