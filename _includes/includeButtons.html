@@ -34,16 +34,16 @@
 			<br>				
 			{% assign categoryReport = page.url | split:'/' %}							
 			{% if page.type == site.report %}			
-			<a title="View and suggest changes to the page source on Git" href="http://{{ site.git}}/enterprise-architect/easite/blob/master/reports/{{categoryReport[2]}}/_posts/{{ page.date | date: "%Y-%m-%d" }}-{{ page.url | split:'/' | last | append:'.md'}}" target="_blank"><img src="/assets/icones/github4.png" alt="Page source"></a>
+			<a title="View and suggest changes to the page source on Git" href="{{ site.git}}blob/master/reports/{{categoryReport[2]}}/_posts/{{ page.date | date: "%Y-%m-%d" }}-{{ page.url | split:'/' | last | append:'.md'}}" target="_blank"><img src="/assets/icones/github4.png" alt="Page source"></a>
 			{% else %}						
-			<a title="View and suggest changes to the page source on Git" href="http://{{ site.git}}/enterprise-architect/easite/blob/master{{ page.url | append:'.md' | replace:'/.md','.md' }}" target="_blank"><img src="/assets/icones/github4.png" alt="Page source"></a>
+			<a title="View and suggest changes to the page source on Git" href="{{ site.git}}blob/master{{ page.url | append:'.md' | replace:'/.md','.md' }}" target="_blank"><img src="/assets/icones/github4.png" alt="Page source"></a>
 			{% endif %}
 		    
 			<br>
 			{% if page.type == site.report %}						
-			<a title="View the page history on GitLab" href="http://{{ site.git}}/enterprise-architect/easite/commits/master/reports/{{categoryReport[2]}}/_posts/{{ page.date | date: "%Y-%m-%d" }}-{{ page.url | split:'/' | last | append:'.md'}}" target="_blank"><img src="/assets/icones/history.png" alt="Page history"></a>
+			<a title="View the page history on GitLab" href="{{ site.git}}commits/master/reports/{{categoryReport[2]}}/_posts/{{ page.date | date: "%Y-%m-%d" }}-{{ page.url | split:'/' | last | append:'.md'}}" target="_blank"><img src="/assets/icones/history.png" alt="Page history"></a>
 			{% else %}						
-			<a title="View the page history on GitLab" href="http://{{ site.git}}/enterprise-architect/easite/commits/master{{ page.url | append:'.md' | replace:'/.md','.md' }}" target="_blank"><img src="/assets/icones/history.png" alt="Page history"></a>
+			<a title="View the page history on GitLab" href="{{ site.git}}commits/master{{ page.url | append:'.md' | replace:'/.md','.md' }}" target="_blank"><img src="/assets/icones/history.png" alt="Page history"></a>
 			{% endif %}			
 			
 		</div>

@@ -5,7 +5,7 @@ email: "admin@alin.be"
 url: "http://patrickalin.github.io"
 port: 4000
 
-git: "https://github.com/patrickalin/patrickalin.github.io"
+git: "https://github.com/patrickalin/patrickalin.github.io/"
 
 types: [
 	"Architecture",

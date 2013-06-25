@@ -27,6 +27,31 @@ I promise not to exclude from consideration any idea based on its source, but to
 
 </div>
 
+---------------------------------------
+
+##Private link
+
+
+<a href="http://maison.alin.be/gitlab">Gitlab</a>
+<br>
+<a href="http://maison.alin.be/gitlabci">Gitlabci</a>
+<br>
+<a href="http://maison.alin.be/rss">RSS</a>
+<br>
+<a href="http://maison.alin.be/transmission">Transmission</a>
+<br>
+<a href="http://maison.alin.be/zabbix">Zabbix</a>
+<br>
+<a href="http://maison.alin.be/elastichead">Elastic head</a>
+<br>
+<a href="http://maison.alin.be/kibana">Kibana</a>
+<br>
+<a href="http://maison.alin.be/owncloud">owncloud</a>
+<br>
+<a href="http://maison.alin.be/discourse">discourse</a>
+<br>
+<a href="http://maison.alin.be/ressourcespace">ressourcespace</a>
+
 ----------------------------------------
 
 ##Contact
