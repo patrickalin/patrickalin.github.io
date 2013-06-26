@@ -19,3 +19,12 @@ date: june 2013
     uname -a
     cat /etc/issue
     lsb_release -a
+
+##Vi sudo 
+
+    :w !sudo tee %
+
+##Test UDP
+    
+    apt-get insall nmap
+    nmap -p 514 -sU elastic

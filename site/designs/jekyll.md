@@ -32,4 +32,14 @@ Problems :
 Rubby , gem version -> solution use RVM Rubby Version Manager to don't cry.
 Accents in Windown -> solution
 
+##
+
+    sudo apt-get install ruby rubygems
+
+I use Ruby Version Manager
+
+    sudo \curl -L https://get.rvm.io | bash -s stable --rails
+
+    gem install jekyll
+    gem install nokogiri
 

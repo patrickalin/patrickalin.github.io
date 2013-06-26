@@ -32,6 +32,8 @@ I promise not to exclude from consideration any idea based on its source, but to
 ##Private link
 
 
+[My Github](https://github.com/patrickalin/patrickalin.github.io)
+
 <a href="http://maison.alin.be/gitlab">Gitlab</a>
 <br>
 <a href="http://maison.alin.be/gitlabci">Gitlabci</a>
