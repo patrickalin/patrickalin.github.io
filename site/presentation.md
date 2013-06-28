@@ -3,8 +3,20 @@ title: Presentation
 layout: layoutPresentation
 status: Draft
 ---
+
+## Me
+
+Patrick Alin.
+
+Currently, I'm working in <a href="http://www.smals.be"> Smals </a> since 2006. 
+
+##Site
+
+This site is build with Jekyll and Bootstrap. It's base of the site <a href="https://www.gov.uk/service-manual"> Gob.uk </a>
+
+Everything must be in source control, like this site.
+
 ## Principles
-* * *
 
 {::options parse_block_html="true" /}
 <div class="well">
@@ -29,7 +41,14 @@ I promise not to exclude from consideration any idea based on its source, but to
 
 ---------------------------------------
 
-##Private link
+##Contact
+
+<img src="/assets/icones/mail216.png" alt="mail"> [Patrick Alin](mailto:{{site.email}})
+
+----------------------------------------
+
+
+##Private links
 
 
 [My Github](https://github.com/patrickalin/patrickalin.github.io)
@@ -53,11 +72,5 @@ I promise not to exclude from consideration any idea based on its source, but to
 <a href="http://maison.alin.be/discourse">discourse</a>
 <br>
 <a href="http://maison.alin.be/ressourcespace">ressourcespace</a>
-
-----------------------------------------
-
-##Contact
-
-<img src="/assets/icones/mail216.png" alt="mail"> [Patrick Alin]({{mailto:site.email}}})
 
 ----------------------------------------

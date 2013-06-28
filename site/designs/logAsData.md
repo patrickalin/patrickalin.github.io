@@ -1,5 +1,5 @@
 ---
-title: Log As Data
+title: Log As Data Design
 description : Write all logs in centralized system
 layout: layoutTypeContent
 type: Design
@@ -8,6 +8,9 @@ status: Approved
 reports: Log As Data
 authors: Patrick Alin
 date: june 2013
+references:
+  - Log As Data Concept
+  - Log As Data Design
 ---
 
 ##Introduction
