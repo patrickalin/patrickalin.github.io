@@ -19,7 +19,7 @@
 		{% for item in site.architecturecategories %}
 			{% assign category = {{item}}%}
 			<h1 id="{{category}}">
-				<img src="/ea/assets/img/icones/{{category}}.png" alt="{{category}}">-<span style="color:green">{{category}} Architectures</span>
+				<img src="/assets/icones/{{category}}.png" alt="{{category}}">-<span style="color:green">{{category}} Architectures</span>
 			</h1>
 			{% assign variablei = 0 %}<!-- i=0 -->
 			
@@ -35,10 +35,10 @@
 							
 							<h5><font size="5">
 							{% if page.status == nil%}
-							<img src="/ea/assets/img/icones/checkbox-unchecked.png" alt="Unchecked">
+							<img src="/assets/icones/checkbox-unchecked.png" alt="Unchecked">
 							{% endif %}
 							{% if page.status != nil%}							
-							<a href="#" data-toggle="tooltip" title="{{page.status}}"><img src="/ea/assets/img/icones/{{page.status}}16.png" alt="{{page.status}}16.png"></a>							
+							<a href="#" data-toggle="tooltip" title="{{page.status}}"><img src="/assets/icones/{{page.status}}16.png" alt="{{page.status}}16.png"></a>							
 							{% endif %}
 							{{ page.title}}
 							</font></h5>
