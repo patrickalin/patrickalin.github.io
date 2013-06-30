@@ -3,7 +3,7 @@ title: Search
 layout: layoutSearch
 ---
 
-<script src="/assets/js/search.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/search/search.min.js" type="text/javascript" charset="utf-8"></script>
 
 <html>
 
