@@ -1,20 +1,17 @@
 ---
-title: Workflow
-description : Workflow
+title: Log As Data Architecture
+description : Logs
 layout: layoutTypeContent
 type: Architecture
-category: Making Software
+category: Infrastructure
 status: Draft
-authors: Xavier Zebier
-date: mai 2012
+authors: Patrick Alin
+date: juin 2013
 ---
 
-###Segmentation of the worklow needs
+##Introduction
 
-The document goals is to segment the workflow needs at tSmals. The document describes three targets :
-
-* Integration Workflow engine
-* Application Workflow engine
-* BPMS
-
-More information can be found [here](http://intranet.smals.be/mayafrdav/nodes/4866168/Workflow%20Segmentation)
+* Short term : ElasticSearch
+* Long term : Hadooo
+* Metrics : graphite
+* Event Complex Processing
